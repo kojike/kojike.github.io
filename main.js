@@ -1,14 +1,15 @@
 'use strict';
 {
 	const images = [
-	'img/pic00.png',
-	'img/pic01.png',
-	'img/pic02.png',
-	'img/pic03.png',
-	'img/pic04.png',
-	'img/pic05.png',
-	'img/pic06.png',
-	'img/pic07.png',
+	'img/kyouto1.jpeg',
+	'img/kyouto1a.jpeg',
+	'img/kyouto1b.jpeg',
+	'img/kyouto1c.jpeg',
+	'img/kyouto1d.jpeg',
+	'img/kyouto1e.jpeg',
+	'img/kyouto1f.jpeg',
+	'img/kyouto1g.jpeg',
+	'img/noname.png',
 	];
 	
 	let currentIndex = 1;
