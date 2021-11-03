@@ -1,83 +1,54 @@
-'use strict';
-{
-	const images = [
-	'img/kyouto1.jpeg',
-	'img/kyouto1a.jpeg',
-	'img/kyouto1b.jpeg',
-	'img/kyouto1c.jpeg',
-	'img/kyouto1d.jpeg',
-	'img/kyouto1e.jpeg',
-	'img/kyouto1f.jpeg',
-	'img/kyouto1g.jpeg',
-	'img/noname.png',
-	];
-	
-	let currentIndex = 1;
-	
-	const mainImage = document.getElementById('main');
-	mainImage.src = images[currentIndex ];
-	
-	images.forEach((image, index) => {
-			const img = document.createElement('img');
-			img.src = image;
-			
-			const li = document.createElement('li');
-			if (index === currentIndex) {
-				li.classList.add('current')
-			}
-			li.addEventListener('click', () => {
-					mainImage.src = image;
-					const thumbnails = document.querySelectorAll('.thumbnails > li');
-					thumbnails[currentIndex].classList.remove('current');
-					currentIndex = index;
-					thumbnails[currentIndex].classList.add('current');
-			});
-			
-			
-			li.appendChild(img);
-			document.querySelector('.thumbnails').appendChild(li);
-	});
-	
-	const next = document.getElementById('next');
-	next.addEventListener('click', () => {
-			let target = currentIndex + 1;
-			if (target === images.length){
-				target = 0;
-			}
-			document.querySelectorAll('.thumbnails > li')[target].click();
-			
-	});
-	
-	const prev = document.getElementById('prev');
-	prev.addEventListener('click', () => {
-			let target = currentIndex - 1;
-			if (target < 0) {
-				target = images.length - 1;
-			}
-			document.querySelectorAll('.thumbnails > li')[target].click();
-	});
+'use strict'
 
 
-	let timeoutId;
-	
-	function playSlideshow() {
-		timeoutId = setTimeout(() => {
-				next.click();
-				playSlideshow();
-		}, 1000);
+document.getElementById("timerbutton").onclick = ()=>{
+	let output = document.getElementById("timerinput");
+	let sec = output.value;
+	var message = document.getElementById("warning");
+	if(sec === ""){
+		message.classList.add("is-active");
+		output.value="";
+		return false;
 	}
+	if(sec <= 0){
+		message.classList.add("is-active");
+		output.value="";
+		return false;
+	}
+	message.classList.remove("is-active");
+	let dt = new Date();
+	let enddt = new Date(dt.getTime() + sec * 1000);
 	
-	let isPlaying = false;
-	
-	const play = document.getElementById('play');
-	play.addEventListener('click', () => {
-			if (isPlaying === false) {
-				playSlideshow();
-				play.textContent = 'Pause';
-			} else {
-				clearTimeout(timeoutId);
-				play.textContent = 'Play';
+	let cnt = sec;
+	const id = setInterval(function(){
+			cnt--;
+			dt = new Date();
+			document.getElementById("time").textContent = cnt;
+			if(dt.getTime() >= enddt.getTime()){
+				document.getElementById("time").textContent = "時間です";
+				clearInterval(id);
+				document.getElementById("sound").play();
 			}
-			isPlaying = !isPlaying;
-	});
-}
+	}, 1000);
+	
+};
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

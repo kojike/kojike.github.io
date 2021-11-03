@@ -1,0 +1,43 @@
+header {
+	background-color: green;
+	height: 100px;
+}
+
+.timerbox{
+	background-color: #00CCFF;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	padding: 32px;
+}
+
+.timersetbox{
+	background-color: #CCCCFF;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	margin-bottom: 16px;
+}
+
+#timerinput{
+	margin-bottom: 8px;
+}
+
+#time{
+	text-align: center;
+}
+
+#warning{
+	padding: 16px;
+	margin-top: 8px;
+	border: 1px solid orange;
+	opacity: 0;
+	transition: ease-in-out .3s;
+}
+
+#warning.is-active{
+	opacity: 1;
+	transition: ease-in-out .3s;
+}

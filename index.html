@@ -1,23 +1,38 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
- <meta charset="utf-8">
- <title>slideshow</title>
- <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>site</title>
+  <link rel="icon" href="favicon.png">
+		<link rel="stylesheet" href="style.css">
 </head>
 <body>
- <main>
-  <img id="main">
-  
-  <nav>
-   <ul>
-    <li id="play">Play</li>
-	<li id="prev">&lt;</li>
-	<li id="next">&gt;</li>
-   </ul>
-  </nav>
-  <ul class="thumbnails"></ul>
- </main>
- 
- <script src="main.js"></script>
+		<header>
+			<h1>kyokushin</h1>
+		</header>
+		<main>
+		<h1>作品紹介</h1>
+		 <section>
+			<h2>タイマー</h2>
+			<div class="timerbox">
+				<div class="timersetbox"">
+					<p>数字を入力してください</p>
+					<input type="number" id="timerinput">
+					<button id="timerbutton">タイマーセット</button>
+					<audio src="oto.mp3" id = "sound"></audio>
+				</div>
+				
+				<P id="time"></p>
+				<p id="warning">入力値が不正です</p>
+			</div>
+		 </section>
+		 
+		</main>
+		<footer>
+          <small>極真</small>
+	    </footer>
+  <script src="main.js"></script>
 </body>
+</html>
